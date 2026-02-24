@@ -20,9 +20,10 @@ Python EDA, and Power BI dashboard design.
 - ⭐ Majority of reviews are **5-star**
 
 ## 📁 Repository Structure
-├── Python/          # Jupyter Notebook - EDA & Analysis
-├── SQL/             # Cleaning queries & Views
-├── Dashboard/       # Power BI Screenshots
+├── FP_Python.ipynb      # Jupyter Notebook - EDA & Analysis
+├── Data_Cleaning_1.sql  # Cleaning queries & Views
+├── Dashboard Page 1.png # Power BI Screenshot 1
+├── Dashboard Page 2.png # Power BI Screenshot 2
 └── README.md
 
 ## 📷 Dashboard Preview
