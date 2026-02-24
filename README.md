@@ -26,8 +26,8 @@ Python EDA, and Power BI dashboard design.
 └── README.md
 
 ## 📷 Dashboard Preview
-![Dashboard Page 1](Dashboard Page 1)
-![Dashboard Page 2](Dashboard Page 2)
+![Dashboard Page 1](Dashboard Page 1.png)
+![Dashboard Page 2](Dashboard Page 1.png)
 
 ## 📂 Dataset
 Dataset source: [Kaggle - Olist Brazilian E-Commerce]
