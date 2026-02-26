@@ -27,21 +27,10 @@ select top (100)*
 from product_category_name_translation
 
 --
-CREATE SCHEMA clean;
+CREATE SCHEMA clean
 GO
 
-
-DROP VIEW IF EXISTS clean.vw_customers;
-DROP VIEW IF EXISTS clean.vw_geolocation;
-DROP VIEW IF EXISTS clean.vw_order_items;
-DROP VIEW IF EXISTS clean.vw_order_payments;
-DROP VIEW IF EXISTS clean.vw_order_reviews;
-DROP VIEW IF EXISTS clean.vw_orders;
-DROP VIEW IF EXISTS clean.vw_products;
-DROP VIEW IF EXISTS clean.vw_sellers;
-DROP VIEW IF EXISTS clean.vw_category_translation;
-
-
+--1
 ---------------------------------------
 -- =============================================
 -- VIEW: vw_customers
@@ -61,6 +50,7 @@ SELECT
 FROM olist_customers;  
 GO
 
+--2    
 -- =============================================
 -- VIEW: vw_geolocation
 -- PURPOSE: Clean and convert geolocation data for analysis
@@ -79,6 +69,7 @@ SELECT
 FROM olist_geolocation;  
 GO
 
+--3    
 -- =============================================
 -- VIEW: vw_order_items
 -- PURPOSE: Clean and standardize order item details
@@ -98,6 +89,7 @@ SELECT
     ISNULL(TRY_CONVERT(DECIMAL(10,2), freight_value), 0) AS freight_value  
 FROM olist_order_items;  
 
+--4
 -- =============================================
 -- VIEW: vw_order_payments
 -- PURPOSE: Clean and standardize order payment information
@@ -115,6 +107,7 @@ SELECT
     ISNULL(TRY_CONVERT(DECIMAL(10,2), payment_value), 0) AS payment_value  
 FROM olist_order_payments;  
 
+--5
 -- =============================================
 -- VIEW: vw_order_reviews
 -- PURPOSE: Clean and prepare order review data
@@ -134,6 +127,7 @@ SELECT
     TRY_CONVERT(DATE, review_answer_timestamp) AS review_answer_timestamp  
 FROM olist_order_reviews;  
 
+--6
 -- =============================================
 -- VIEW: vw_orders
 -- PURPOSE: Clean and standardize order information
@@ -153,6 +147,7 @@ SELECT
     TRY_CONVERT(DATE, order_estimated_delivery_date) AS order_estimated_delivery_date  
 FROM olist_orders;  
 
+--7
 -- =============================================
 -- VIEW: vw_products
 -- PURPOSE: Clean and standardize product data
@@ -172,6 +167,7 @@ SELECT
     ISNULL(product_width_cm, 0) AS product_width_cm  
 FROM olist_products;  
 
+--8
 -- =============================================
 -- VIEW: vw_sellers
 -- PURPOSE: Clean and standardize seller data
@@ -188,6 +184,7 @@ SELECT
     ISNULL(TRIM(seller_state), 'Unknown') AS seller_state  
 FROM olist_sellers;  
 
+--9
 -- =============================================
 -- VIEW: vw_category_translation
 -- PURPOSE: Prepare product category translations
@@ -200,13 +197,4 @@ SELECT
     TRIM(product_category_name_english) AS product_category_name_english  
 FROM product_category_name_translation;
 
----------------------------------------
-select @@SERVERNAME
 
-DESKTOP-E3O8GQJ
---------------------
-
-
-
-
-------------------------
